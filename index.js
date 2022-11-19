@@ -8,9 +8,9 @@ app.use(express.json());
 require("./configs/db")
 app.use("", require("./controllers/userController"))
 
-const PORT = process.env.PORT
-
+const PORT = process.env.PORT || 5000;
+app.set("port", PORT)
 
 app.listen(PORT, () => {
     console.log(`listning on port ${PORT}`);
-})
+}) 
